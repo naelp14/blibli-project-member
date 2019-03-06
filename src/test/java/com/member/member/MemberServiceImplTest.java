@@ -20,18 +20,18 @@ public class MemberServiceImplTest {
 
         Assert.assertTrue("Total harus ada 1", members.findAll().size()==1);
 
-        Member temp = members.findById("123");
+        Member temp = members.findId("123");
         Assert.assertTrue("Product harus ada", product.getId().equals(temp.getId()));
     }
 
     @Test
     public void testFindId(){
 
-        Member product = members.findById("kosong");
+        Member product = members.findId("kosong");
         Assert.assertTrue("Product harus null", product == null);
 
         members.create(new Member("234","ababab","cth","500","dfafdsf"));
-        Assert.assertTrue("ID harus ketemu", members.findById("234").getEmail().equals("ababab"));
+        Assert.assertTrue("ID harus ketemu", members.findId("234").getEmail().equals("ababab"));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class MemberServiceImplTest {
         members.create(new Member("234","ababab","ctg","500","ADfdasf"));
         members.update(new Member("234","hahaahh","hai","800","ADSfadsf"));
 
-        Assert.assertTrue("Nama harus terupdate", members.findById("234").getEmail().compareTo("hahaahh")==0);
+        Assert.assertTrue("Nama harus terupdate", members.findId("234").getEmail().compareTo("hahaahh")==0);
 
         Member member = members.update(new Member("534","ababab","ctg","500","ADfac"));
 
@@ -67,7 +67,7 @@ public class MemberServiceImplTest {
         Assert.assertTrue("Size harus 2", members.findAll().size()==2);
 
         members.delete("234");
-        Assert.assertTrue("Harus di delete", members.findById("234")==null);
+        Assert.assertTrue("Harus di delete", members.findId("234")==null);
 
         members.delete("534");
         Assert.assertTrue("Size harus 0", members.findAll().size()==0);

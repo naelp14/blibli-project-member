@@ -1,6 +1,7 @@
 package com.member.member.Service;
 
 import com.member.member.Member;
+import com.member.member.Repository.MemberRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,7 @@ import java.util.List;
 public class MembeServiceImpl implements MemberService {
 
     private ArrayList<Member> members = new ArrayList<Member>();
+    private MemberRepository memberRepository;
     @Override
     public Member create(Member member) {
         members.add(member);
@@ -18,7 +20,7 @@ public class MembeServiceImpl implements MemberService {
     }
 
     @Override
-    public Member findById(String id) {
+    public Member findId(String id) {
         Member temp = new Member();
         for (int i=0;i<members.size();i++){
             if(members.get(i).getId().equals(id)){

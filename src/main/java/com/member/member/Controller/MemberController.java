@@ -43,7 +43,7 @@ public class MemberController {
     )
 
     public Member findById(@PathVariable("idMember")String id){
-        return memberService.findById(id);
+        return memberService.findId(id);
     }
 
     @RequestMapping(

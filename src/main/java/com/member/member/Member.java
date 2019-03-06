@@ -1,10 +1,23 @@
 package com.member.member;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "member")
 public class Member {
+    @Id
+    @Column(name = "Id")
     private String id;
+    @Column(name = "Email", nullable = false)
     private String email;
+    @Column(name = "Password", nullable = false)
     private String password;
+    @Column(name = "Name", nullable = false)
     private String name;
+    @Column(name = "Address")
     private String address;
 
     public Member(){

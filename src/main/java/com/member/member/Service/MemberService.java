@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface MemberService {
     Member create(Member member);
-    Member findById(String id);
+    Member findId(String id);
     Member update(Member member);
     List<Member> findAll();
     Member delete(String id);
