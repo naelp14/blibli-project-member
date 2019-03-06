@@ -1,16 +1,30 @@
 package com.member.member;
 
 public class Member {
+    private String id;
     private String email;
     private String password;
     private String name;
     private String address;
 
-    public Member(String email, String password, String name, String address){
+    public Member(){
+
+    }
+
+    public Member(String id, String email, String password, String name, String address){
+        this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
         this.address = address;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getEmail() {
