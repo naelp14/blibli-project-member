@@ -3,6 +3,7 @@ package com.member.member.Controller;
 import java.util.List;
 
 import com.member.member.Member;
+import com.member.member.Model.ApiKey;
 import com.member.member.Service.MembeServiceImpl;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +33,7 @@ public class MemberController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
 
-    public List<Member> findAll(){
+    public List<Member> findAll(ApiKey apiKey){
         return memberService.findAll();
     }
 
